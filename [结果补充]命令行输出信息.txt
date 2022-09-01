@@ -1,0 +1,151 @@
+wandb: Currently logged in as: dention. Use `wandb login --relogin` to force relogin
+train: weights=/root/autodl-tmp/yolo-master/runs/exp4/weights/last.pt, cfg=/root/autodl-tmp/yolo-master/dota_data/yolov4.yaml, data=/root/autodl-tmp/yolo-master/dota_data/dota_name.yaml, hyp=data/hyps/hyp.scratch-low.yaml, epochs=2, batch_size=48, imgsz=128, rect=False, resume=False, nosave=False, noval=False, noautoanchor=False, noplots=False, evolve=None, bucket=, cache=None, image_weights=False, device=0, multi_scale=False, single_cls=False, optimizer=SGD, sync_bn=False, workers=4, project=runs, name=exp, exist_ok=False, quad=False, cos_lr=False, label_smoothing=0.0, patience=100, freeze=[0], save_period=-1, local_rank=-1, entity=None, upload_dataset=False, bbox_interval=-1, artifact_alias=latest
+github: skipping check (not a git repository), for updates see https://github.com/ultralytics/yolov5
+YOLOv5 🚀 2022-8-23 torch 1.8.1+cu111 CUDA:0 (NVIDIA GeForce GTX 1080 Ti, 11178MiB)
+
+hyperparameters: lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=0.05, cls=0.5, cls_pw=1.0, obj=1.0, obj_pw=1.0, iou_t=0.2, anchor_t=4.0, fl_gamma=0.0, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, mosaic=1.0, mixup=0.0, copy_paste=0.0
+TensorBoard: Start with 'tensorboard --logdir runs', view at http://localhost:6006/
+wandb: Tracking run with wandb version 0.13.2
+wandb: Run data is saved locally in /root/autodl-tmp/yolo-master/wandb/run-20220901_091249-28tsv5zq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run earthy-cosmos-10
+wandb: ⭐️ View project at https://wandb.ai/dention/runs
+wandb: 🚀 View run at https://wandb.ai/dention/runs/runs/28tsv5zq
+YOLOv5 temporarily requires wandb version 0.12.10 or below. Some features may not work as expected.
+
+                 from  n    params  module                                  arguments                     
+  0                -1  1       928  models.common.Conv                      [3, 32, 3, 1]                 
+  1                -1  1     18560  models.common.Conv                      [32, 64, 3, 2]                
+  2                -1  1     19904  models.common.BottleneckCSP             [64, 64, 1]                   
+  3                -1  1      4224  models.common.Conv                      [64, 64, 1, 1]                
+  4                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]               
+  5                -1  2    119936  models.common.BottleneckCSP             [128, 128, 2]                 
+  6                -1  1     16640  models.common.Conv                      [128, 128, 1, 1]              
+  7                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]              
+  8                -1  8   1463552  models.common.BottleneckCSP             [256, 256, 8]                 
+  9                -1  1     66048  models.common.Conv                      [256, 256, 1, 1]              
+ 10                -1  1   1180672  models.common.Conv                      [256, 512, 3, 2]              
+ 11                -1  8   5843456  models.common.BottleneckCSP             [512, 512, 8]                 
+ 12                -1  1    263168  models.common.Conv                      [512, 512, 1, 1]              
+ 13                -1  1   4720640  models.common.Conv                      [512, 1024, 3, 2]             
+ 14                -1  4  12858368  models.common.BottleneckCSP             [1024, 1024, 4]               
+ 15                -1  1   1050624  models.common.Conv                      [1024, 1024, 1, 1]            
+ 16                -1  1    525312  models.common.Conv                      [1024, 512, 1, 1]             
+ 17                -1  1   4720640  models.common.Conv                      [512, 1024, 3, 1]             
+ 18                -1  1    525312  models.common.Conv                      [1024, 512, 1, 1]             
+ 19                -1  1   1182208  models.common.SPP                       [512, 1024, [5, 9, 13]]       
+ 20                -1  1    525312  models.common.Conv                      [1024, 512, 1, 1]             
+ 21                -1  1   4720640  models.common.Conv                      [512, 1024, 3, 1]             
+ 22                -1  1    525312  models.common.Conv                      [1024, 512, 1, 1]             
+ 23                -1  1    263168  models.common.Conv                      [512, 512, 1, 1]              
+ 24                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']          
+ 25          [-1, 12]  1         0  models.common.Concat                    [1]                           
+ 26                -1  3   2823680  models.common.BottleneckCSP             [1024, 512, 3, False]         
+ 27                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]              
+ 28                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']          
+ 29           [-1, 9]  1         0  models.common.Concat                    [1]                           
+ 30                -1  3    707328  models.common.BottleneckCSP             [512, 256, 3, False]          
+ 31                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]              
+ 32          [-1, 27]  1         0  models.common.Concat                    [1]                           
+ 33                -1  3   2561536  models.common.BottleneckCSP             [512, 512, 3, False]          
+ 34                -1  1   2360320  models.common.Conv                      [512, 512, 3, 2]              
+ 35          [-1, 23]  1         0  models.common.Concat                    [1]                           
+ 36                -1  3  10234880  models.common.BottleneckCSP             [1024, 1024, 3, False]        
+ 37      [30, 33, 36]  1    107700  models.yolo.Detect                      [15, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [256, 512, 1024]]
+yolov4 summary: 551 layers, 60501396 parameters, 60501396 gradients, 131.8 GFLOPs
+
+Transferred 52/736 items from /root/autodl-tmp/yolo-master/runs/exp4/weights/last.pt
+Scaled weight_decay = 0.000375
+optimizer: SGD with parameter groups 120 weight (no decay), 132 weight, 123 bias
+train: Scanning '/root/autodl-tmp/yolo-master/dota_data/labels/train.cache' images and labels... 15749 found, 0 missing, 5473 empty, 0 corrupt: 100%|██████████| 15749/15749 [
+val: Scanning '/root/autodl-tmp/yolo-master/dota_data/labels/val.cache' images and labels... 5297 found, 0 missing, 2019 empty, 0 corrupt: 100%|██████████| 5297/5297 [00:00<?
+Plotting labels to runs/exp5/labels.jpg... 
+
+AutoAnchor: 1.26 anchors/target, 0.683 Best Possible Recall (BPR). Anchors are a poor fit to dataset ⚠️, attempting to improve...
+AutoAnchor: WARNING: Extremely small objects found: 66106 of 203613 labels are < 3 pixels in size
+AutoAnchor: Running kmeans for 9 anchors on 198473 points...
+AutoAnchor: Evolving anchors with Genetic Algorithm: fitness = 0.7705: 100%|██████████| 1000/1000 [01:31<00:00, 10.98it/s]                                                    
+AutoAnchor: thr=0.25: 0.9956 best possible recall, 6.04 anchors past thr
+AutoAnchor: n=9, img_size=128, metric_all=0.385/0.764-mean/best, past_thr=0.503-mean: 2,2, 3,5, 5,3, 5,5, 5,10, 9,7, 10,11, 18,22, 38,35
+AutoAnchor: Done ✅ (optional: update model *.yaml to use these anchors in the future)
+Image sizes 128 train, 128 val
+Using 4 dataloader workers
+Logging results to runs/exp5
+Starting training for 2 epochs...
+
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+       0/1     2.87G    0.1585  0.005731   0.05839       103       128: 100%|██████████| 329/329 [03:17<00:00,  1.66it/s]                                                     
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 56/56 [00:28<00:00,  1.98it/s]                                       
+                 all       5297      59814      0.141    0.00838    0.00246   0.000472
+
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+       1/1     3.19G    0.1497  0.007039   0.04377        11       128: 100%|██████████| 329/329 [03:11<00:00,  1.72it/s]                                                     
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 56/56 [00:28<00:00,  1.94it/s]                                       
+                 all       5297      59814      0.607    0.00951    0.00291   0.000569
+
+2 epochs completed in 0.127 hours.
+Optimizer stripped from runs/exp5/weights/last.pt, 121.5MB
+Optimizer stripped from runs/exp5/weights/best.pt, 121.5MB
+
+Validating runs/exp5/weights/best.pt...
+Fusing layers... 
+yolov4 summary: 440 layers, 60466580 parameters, 0 gradients, 130.9 GFLOPs
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 56/56 [00:36<00:00,  1.53it/s]                                       
+                 all       5297      59814      0.608    0.00951    0.00289   0.000565
+       small-vehicle       5297      10828    0.00134    0.00803   0.000257   5.39e-05
+       large-vehicle       5297       9256     0.0901     0.0931     0.0242    0.00453
+               plane       5297       5298    0.00335   0.000189    0.00373   0.000839
+        storage-tank       5297       5012          1          0   0.000907   0.000233
+                ship       5297      19571     0.0077     0.0162    0.00105   0.000212
+              harbor       5297       4788    0.00998     0.0251    0.00452   0.000878
+  ground-track-field       5297        316          1          0    0.00863    0.00173
+   soccer-ball-field       5297        351          1          0          0          0
+        tennis-court       5297       1602          1          0          0          0
+       swimming-pool       5297        763          1          0          0          0
+    baseball-diamond       5297        403          1          0          0          0
+          roundabout       5297        299          0          0          0          0
+    basketball-court       5297        297          1          0          0          0
+              bridge       5297        896          1          0          0          0
+          helicopter       5297        134          1          0          0          0
+wandb: Waiting for W&B process to finish... (success).
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:      metrics/mAP_0.5 ▁██
+wandb: metrics/mAP_0.5:0.95 ▁██
+wandb:    metrics/precision ▁██
+wandb:       metrics/recall ▁██
+wandb:       train/box_loss █▁
+wandb:       train/cls_loss █▁
+wandb:       train/obj_loss ▁█
+wandb:         val/box_loss █▁▁
+wandb:         val/cls_loss █▁▁
+wandb:         val/obj_loss ▁██
+wandb:                x/lr0 ▁█
+wandb:                x/lr1 ▁█
+wandb:                x/lr2 █▁
+wandb: 
+wandb: Run summary:
+wandb:           best/epoch 1
+wandb:         best/mAP_0.5 0.00291
+wandb:    best/mAP_0.5:0.95 0.00057
+wandb:       best/precision 0.6075
+wandb:          best/recall 0.00951
+wandb:      metrics/mAP_0.5 0.00289
+wandb: metrics/mAP_0.5:0.95 0.00056
+wandb:    metrics/precision 0.6075
+wandb:       metrics/recall 0.00951
+wandb:       train/box_loss 0.14971
+wandb:       train/cls_loss 0.04377
+wandb:       train/obj_loss 0.00704
+wandb:         val/box_loss 0.14975
+wandb:         val/cls_loss 0.05936
+wandb:         val/obj_loss 0.00455
+wandb:                x/lr0 0.00336
+wandb:                x/lr1 0.00336
+wandb:                x/lr2 0.0368
+wandb: 
+wandb: Synced earthy-cosmos-10: https://wandb.ai/dention/runs/runs/28tsv5zq
+wandb: Synced 5 W&B file(s), 81 media file(s), 1 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220901_091249-28tsv5zq/logs
+Results saved to runs/exp5
